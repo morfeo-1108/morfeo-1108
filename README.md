@@ -12,7 +12,7 @@ I run an internal multi-tool audit pipeline (Slither, Aderyn, Mythril, Semgrep, 
 
 ## Verified track record (real numbers, not vanity metrics)
 
-- **50 contracts** scanned end-to-end through the full tool pipeline — every single one documented, [50 individual reports, fully public](https://github.com/morfeo-1108/smart-contract-audit-archive/tree/main/reports/full-scan).
+- **50 contracts** scanned end-to-end through the full tool pipeline — every single one documented, [50 individual reports, fully public](https://github.com/morfeo-1108/smart-contract-audit-archive/tree/master/reports/full-scan).
 - **29 / 50 flagged with a Critical or High severity finding** in a category with real exploit potential: reentrancy, unchecked ERC20 transfers, `arbitrary-send-eth`, **delegatecall to a user-controlled address** (full contract takeover), weak PRNG, ETH locked with no withdraw path.
 - Every finding is reported **after** a dedicated noise-filtering pass — detector-level style issues (`name-reused`, `naming-convention`, CI/CD linter noise) never make it into a severity count. (*The remaining 21 contracts split between medium-only, low-only, or genuinely clean — see the full archive for the exact breakdown. A clean result is a valid audit outcome, not a miss.*)
 
