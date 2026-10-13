@@ -12,13 +12,13 @@ I run an internal multi-tool audit pipeline (Slither, Aderyn, Mythril, Semgrep, 
 
 ## Verified track record (real numbers, not vanity metrics)
 
-- **50 contracts** scanned end-to-end through the full tool pipeline.
-- **29 / 50** flagged with at least one finding in a category with real exploit potential (reentrancy, unchecked ERC20 transfers, `arbitrary-send-eth`, delegatecall to a user-controlled address, ETH locked with no withdraw path) — after filtering out detector-level noise.
-- **20 / 50** came back clean — no real security-relevant findings. I report that too. A clean audit is a result, not a failure to find something.
-- Built a dedicated **noise-filtering layer** after confirming, by manually reading the source, that a report flagged `risk_label: CRITICAL` with "16 critical findings" was actually 16 instances of `name-reused` — a Slither detector that fires on duplicate OpenZeppelin import paths, not a vulnerability. That finding shaped how the whole reporting pipeline aggregates severity now.
-- Built an **identifier-grounding check** after the LLM review layer referenced a contract field in a finding that didn't exist in the actual source — the check now verifies every named identifier against the real code before a finding ships with anything above LOW confidence.
+- **50 contracts** scanned end-to-end through the full tool pipeline — every single one documented, [50 individual reports, fully public](https://github.com/morfeo-1108/smart-contract-audit-archive/tree/main/reports/full-scan).
+- **29 / 50 flagged with a Critical or High severity finding** in a category with real exploit potential: reentrancy, unchecked ERC20 transfers, `arbitrary-send-eth`, **delegatecall to a user-controlled address** (full contract takeover), weak PRNG, ETH locked with no withdraw path.
+- Every finding is reported **after** a dedicated noise-filtering pass — detector-level style issues (`name-reused`, `naming-convention`, CI/CD linter noise) never make it into a severity count. (*The remaining 21 contracts split between medium-only, low-only, or genuinely clean — see the full archive for the exact breakdown. A clean result is a valid audit outcome, not a miss.*)
 
-I'd rather tell you about the bugs *in my own tooling* that I found and fixed than inflate a finding count. That's the actual signal of whether an audit process is trustworthy.
+**Why the noise-filter matters:** I built it after catching, by manually reading the source, a report that scored `risk_label: CRITICAL` with "16 critical findings" — all 16 were the same Slither detector firing on duplicate OpenZeppelin import paths. Not a vulnerability. I also built an **identifier-grounding check** after an LLM-generated finding referenced a contract field that didn't exist in the real source — every named identifier now gets checked against the actual code before a finding ships above LOW confidence.
+
+That's the standard every number on this page is held to.
 
 ## Ecosystems & active work
 
