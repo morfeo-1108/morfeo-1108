@@ -26,8 +26,8 @@ That's the standard every number on this page is held to.
 |---|---|---|
 | **Web3 Audit Pipeline** | Multi-tool smart contract audit orchestration with cross-validation before any finding is trusted | Slither, Aderyn, Mythril, Semgrep, Heimdall, Echidna, Halmos, custom automated review |
 | **On-chain Fund Recovery Research** | Identifying genuinely abandoned/trapped funds in historical contracts (2016–2020 era), with on-chain verification discipline before any claim is made | Etherscan V2 multichain API, direct RPC verification, Foundry fork testing for exploit confirmation |
-| **AI-driven Fiscal Intelligence Platform** | Large-scale data platform for tax/financial intelligence | In development |
-| **Edge AI Nodes** | Distributed inference infrastructure | In development |
+| **AI-driven Fiscal Intelligence Platform** | — | In development |
+| **Edge AI Nodes** | — | In development |
 
 ## Methodology, briefly
 
