@@ -27,7 +27,7 @@ That's the standard every number on this page is held to.
 | **Static analysis** | Slither, Aderyn, Mythril, Semgrep (Solidity-scoped), Heimdall for unverified bytecode |
 | **Cross-validation** | A finding only reaches HIGH confidence if corroborated by a second tool or a manual read of the real source |
 | **Manual verification** | Anything claiming fund-theft, full-drain, or access-control bypass gets a live Foundry mainnet-fork test before it goes in a report |
-| **Honest reporting** | "No exploitable vulnerability found" is a valid, useful audit outcome — reported as such, not padded |
+| **Depth of execution** | Full-depth runs include fuzzing (Echidna) and formal verification (Halmos) on top of static analysis — not just a linter pass |
 
 ## Capabilities beyond auditing
 
