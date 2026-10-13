@@ -27,8 +27,13 @@ That's the standard every number on this page is held to.
 | **Static analysis** | Slither, Aderyn, Mythril, Semgrep (Solidity-scoped), Heimdall for unverified bytecode |
 | **Cross-validation** | A finding only reaches HIGH confidence if corroborated by a second tool or a manual read of the real source |
 | **Manual verification** | Anything claiming fund-theft, full-drain, or access-control bypass gets a live Foundry mainnet-fork test before it goes in a report |
-| **On-chain fund recovery research** | Identifying genuinely abandoned/trapped funds in historical contracts (2016–2020 era) — on-chain verification discipline before any claim is made, using the Etherscan V2 multichain API and direct RPC verification |
 | **Honest reporting** | "No exploitable vulnerability found" is a valid, useful audit outcome — reported as such, not padded |
+
+## Capabilities beyond auditing
+
+**Blockchain forensics & fund recovery intelligence** — multi-hop on-chain transaction tracing, mixer/bridge/exchange identification, and investigation of abandoned or trapped funds in historical contracts (2016–2020 era), using the Etherscan V2 multichain API and direct RPC verification. Example of the discipline applied: a real multisig cluster holding **~$9.78M** was fully traced — every one of the 30 associated owner addresses checked for on-chain activity, ENS registration, and public labels before concluding whether outreach was even viable. Real fund amounts, real verification, no claim made without on-chain proof.
+
+**GPU / distributed inference infrastructure** — cost-aware routing between on-demand GPU inference and local fallback, with automatic warmup before a workload starts and cooldown immediately after, so compute cost tracks actual usage instead of running idle.
 
 ## Work with me
 
