@@ -1,4 +1,4 @@
-# Nicolás Talero
+# Nicolás Talero Riaño
 
 **Software Architect & Web3 Security Researcher** · Founder @ [Digital Nova Solutions SAS](mailto:novadigitalsolutions2025@gmail.com)
 
