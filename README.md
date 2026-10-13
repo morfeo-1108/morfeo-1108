@@ -8,7 +8,7 @@ I build security tooling and audit smart contracts, with a focus on EVM-based pr
 
 ## What I actually do
 
-I run an internal multi-tool audit pipeline (Slither, Aderyn, Mythril, Semgrep, Heimdall, Echidna, Halmos, plus an in-house LLM review layer) against real, deployed contracts — ICO-era tokens, vaults, multisig wallets, and DeFi protocols spanning 2016–2024. The pipeline's job isn't to produce the longest finding list; it's to produce the **shortest list that's actually true**.
+I run an internal multi-tool audit pipeline (Slither, Aderyn, Mythril, Semgrep, Heimdall, Echidna, Halmos, plus an in-house automated review layer) against real, deployed contracts — ICO-era tokens, vaults, multisig wallets, and DeFi protocols spanning 2016–present. The pipeline's job isn't to produce the longest finding list; it's to produce the **shortest list that's actually true**.
 
 ## Verified track record (real numbers, not vanity metrics)
 
@@ -16,7 +16,7 @@ I run an internal multi-tool audit pipeline (Slither, Aderyn, Mythril, Semgrep, 
 - **29 / 50 flagged with a Critical or High severity finding** in a category with real exploit potential: reentrancy, unchecked ERC20 transfers, `arbitrary-send-eth`, **delegatecall to a user-controlled address** (full contract takeover), weak PRNG, ETH locked with no withdraw path.
 - Every finding is reported **after** a dedicated noise-filtering pass — detector-level style issues (`name-reused`, `naming-convention`, CI/CD linter noise) never make it into a severity count. (*The remaining 21 contracts split between medium-only, low-only, or genuinely clean — see the full archive for the exact breakdown. A clean result is a valid audit outcome, not a miss.*)
 
-**Why the noise-filter matters:** I built it after catching, by manually reading the source, a report that scored `risk_label: CRITICAL` with "16 critical findings" — all 16 were the same Slither detector firing on duplicate OpenZeppelin import paths. Not a vulnerability. I also built an **identifier-grounding check** after an LLM-generated finding referenced a contract field that didn't exist in the real source — every named identifier now gets checked against the actual code before a finding ships above LOW confidence.
+**Why the noise-filter matters:** I built it after catching, by manually reading the source, a report that scored `risk_label: CRITICAL` with "16 critical findings" — all 16 were the same Slither detector firing on duplicate OpenZeppelin import paths. Not a vulnerability. I also built an **identifier-grounding check** after a finding generated during automated review referenced a contract field that didn't exist in the real source — every named identifier now gets checked against the actual code before a finding ships above LOW confidence.
 
 That's the standard every number on this page is held to.
 
@@ -24,7 +24,7 @@ That's the standard every number on this page is held to.
 
 | Area | What it is | Stack / notes |
 |---|---|---|
-| **Web3 Audit Pipeline** | Multi-tool smart contract audit orchestration with cross-validation before any finding is trusted | Slither, Aderyn, Mythril, Semgrep, Heimdall, Echidna, Halmos, custom LLM review |
+| **Web3 Audit Pipeline** | Multi-tool smart contract audit orchestration with cross-validation before any finding is trusted | Slither, Aderyn, Mythril, Semgrep, Heimdall, Echidna, Halmos, custom automated review |
 | **On-chain Fund Recovery Research** | Identifying genuinely abandoned/trapped funds in historical contracts (2016–2020 era), with on-chain verification discipline before any claim is made | Etherscan V2 multichain API, direct RPC verification, Foundry fork testing for exploit confirmation |
 | **AI-driven Fiscal Intelligence Platform** | Large-scale data platform for tax/financial intelligence | In development |
 | **Edge AI Nodes** | Distributed inference infrastructure | In development |
