@@ -1,6 +1,6 @@
 # Nicolás Talero
 
-**Software Architect & Web3 Security Researcher** · Founder @ [Digital Nova Solutions SAS](mailto:nicolastalero1108@gmail.com)
+**Software Architect & Web3 Security Researcher** · Founder @ [Digital Nova Solutions SAS](mailto:novadigitalsolutions2025@gmail.com)
 
 I build security tooling and audit smart contracts, with a focus on EVM-based protocols. My work centers on one problem that most automated audit tools ignore: **raw static-analysis output is noisy, and treating it as ground truth is how false positives end up in client reports.**
 
@@ -39,6 +39,6 @@ That's the standard every number on this page is held to.
 
 If you're a CTO, Web3 founder, or agency that needs an express triage audit, a deeper security review, or white-label audit support — reach out.
 
-📧 **nicolastalero1108@gmail.com**
+📧 **novadigitalsolutions2025@gmail.com**
 
 See [`smart-contract-audit-archive`](https://github.com/morfeo-1108/smart-contract-audit-archive) for real, verified audit examples.
